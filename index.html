@@ -3,45 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bus Ticket Booking</title>
+    <title>Bus Booking</title>
     <link rel="stylesheet" href="book.css">
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <h1>🚌 Bus Ticket Booking</h1>
-    </header>
+<header>
+    <h1>🚌 Smart Bus Booking</h1>
+</header>
 
-    <!-- SLOT SELECTION -->
-    <section id="slots">
+<main>
+
+    <!-- Seat Layout Card -->
+    <div class="card">
         <h2>Select Your Seat</h2>
-        <div class="seat-container">
+        <div class="seat-grid">
             <div class="seat" onclick="selectSeat(this)">1</div>
             <div class="seat" onclick="selectSeat(this)">2</div>
             <div class="seat" onclick="selectSeat(this)">3</div>
             <div class="seat" onclick="selectSeat(this)">4</div>
+            <div class="seat" onclick="selectSeat(this)">5</div>
+            <div class="seat" onclick="selectSeat(this)">6</div>
         </div>
-    </section>
+    </div>
 
-    <!-- BOOKING FORM -->
-    <section id="form-section" style="display:none;">
-        <h2>Enter Details</h2>
+    <!-- Form Card -->
+    <div class="card hidden" id="form-section">
+        <h2>Passenger Details</h2>
         <form id="bookingForm">
-            <input type="text" placeholder="Name" required><br>
-            <input type="number" placeholder="Age" required><br>
-            <input type="text" placeholder="Gender" required><br>
-            <input type="email" placeholder="Email" required><br>
-            <input type="text" placeholder="Phone Number" required><br>
-            <button type="submit">Book Ticket</button>
+
+            <div class="input-group">
+                <input type="text" required>
+                <label>Name</label>
+            </div>
+
+            <div class="input-group">
+                <input type="number" required>
+                <label>Age</label>
+            </div>
+
+            <div class="input-group">
+                <input type="text" required>
+                <label>Gender</label>
+            </div>
+
+            <div class="input-group">
+                <input type="email" required>
+                <label>Email</label>
+            </div>
+
+            <div class="input-group">
+                <input type="text" required>
+                <label>Phone</label>
+            </div>
+
+            <button type="submit">Confirm Booking</button>
         </form>
-    </section>
+    </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 Ticket Booking App</p>
-    </footer>
+</main>
 
-    <script src="book.js"></script>
+<footer>
+    <p>© 2026 Smart Booking System</p>
+</footer>
+
+<script src="book.js"></script>
 </body>
 </html>
