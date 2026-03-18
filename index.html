@@ -3,412 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BookMyBus - Bus Ticket Booking</title>
+    <title>Bus Ticket Booking</title>
     <link rel="stylesheet" href="book.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header Section - BookMyShow Style -->
+
+    <!-- HEADER -->
     <header>
-        <div class="header-container">
-            <div class="logo">
-                <h1>🎫 BookMy<span>Bus</span></h1>
-            </div>
-            <div class="search-bar">
-                <input type="text" placeholder="Search for buses, routes...">
-                <button>🔍</button>
-            </div>
-            <div class="header-right">
-                <select class="city-selector">
-                    <option>Mumbai</option>
-                    <option>Delhi</option>
-                    <option>Bangalore</option>
-                    <option>Chennai</option>
-                </select>
-                <button class="sign-in-btn">Sign In</button>
-            </div>
-        </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#" class="active">Bus Tickets</a></li>
-                <li><a href="#">Train Tickets</a></li>
-                <li><a href="#">Flight Tickets</a></li>
-                <li><a href="#">Hotels</a></li>
-                <li><a href="#">Holiday Packages</a></li>
-                <li><a href="#">Live Tracking</a></li>
-            </ul>
-        </nav>
+        <h1>🚌 Bus Ticket Booking</h1>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-content">
-                <h2>Book Bus Tickets Online</h2>
-                <p>Safe, Sanitized, and Social Distanced Buses</p>
-            </div>
-        </section>
-
-        <!-- Bus Search Section -->
-        <section class="search-section">
-            <div class="search-container">
-                <div class="search-box">
-                    <div class="input-group">
-                        <label>From</label>
-                        <input type="text" value="Mumbai" placeholder="Enter city">
-                    </div>
-                    <div class="swap-icon">⇄</div>
-                    <div class="input-group">
-                        <label>To</label>
-                        <input type="text" value="Pune" placeholder="Enter city">
-                    </div>
-                    <div class="input-group">
-                        <label>Date</label>
-                        <input type="date" value="2024-01-25">
-                    </div>
-                    <button class="search-btn">Search Buses</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bus List Section -->
-        <section class="bus-list-section">
-            <div class="bus-filters">
-                <h3>Available Buses (4)</h3>
-                <div class="filter-options">
-                    <span class="filter-tag active">All</span>
-                    <span class="filter-tag">AC</span>
-                    <span class="filter-tag">Non-AC</span>
-                    <span class="filter-tag">Sleeper</span>
-                    <span class="filter-tag">Seater</span>
-                </div>
-            </div>
-
-            <!-- Bus Cards -->
-            <div class="bus-cards">
-                <!-- Bus 1 -->
-                <div class="bus-card" data-bus="1">
-                    <div class="bus-card-header">
-                        <div class="bus-info">
-                            <h4>VRL Travels <span class="bus-type">AC Sleeper</span></h4>
-                            <p>⭐ 4.5 (2.3k ratings) | 10:00 PM - 6:00 AM</p>
-                        </div>
-                        <div class="bus-price">
-                            <h3>₹899</h3>
-                            <p>per seat</p>
-                        </div>
-                    </div>
-                    <div class="bus-card-footer">
-                        <div class="amenities">
-                            <span>🕒 On Time</span>
-                            <span>🧼 Sanitized</span>
-                            <span>📶 WiFi</span>
-                            <span>🔌 Charging Point</span>
-                        </div>
-                        <button class="select-seats-btn" onclick="showBusSeats('VRL Travels', 'AC Sleeper', '₹899')">Select Seats</button>
-                    </div>
-                </div>
-
-                <!-- Bus 2 -->
-                <div class="bus-card" data-bus="2">
-                    <div class="bus-card-header">
-                        <div class="bus-info">
-                            <h4>SRS Travels <span class="bus-type">Volvo AC</span></h4>
-                            <p>⭐ 4.3 (1.8k ratings) | 9:30 PM - 5:30 AM</p>
-                        </div>
-                        <div class="bus-price">
-                            <h3>₹1099</h3>
-                            <p>per seat</p>
-                        </div>
-                    </div>
-                    <div class="bus-card-footer">
-                        <div class="amenities">
-                            <span>🕒 On Time</span>
-                            <span>🧼 Sanitized</span>
-                            <span>📶 WiFi</span>
-                            <span>🍿 Snacks</span>
-                        </div>
-                        <button class="select-seats-btn" onclick="showBusSeats('SRS Travels', 'Volvo AC', '₹1099')">Select Seats</button>
-                    </div>
-                </div>
-
-                <!-- Bus 3 -->
-                <div class="bus-card" data-bus="3">
-                    <div class="bus-card-header">
-                        <div class="bus-info">
-                            <h4>Orange Travels <span class="bus-type">Non-AC Sleeper</span></h4>
-                            <p>⭐ 4.1 (1.2k ratings) | 8:45 PM - 4:45 AM</p>
-                        </div>
-                        <div class="bus-price">
-                            <h3>₹599</h3>
-                            <p>per seat</p>
-                        </div>
-                    </div>
-                    <div class="bus-card-footer">
-                        <div class="amenities">
-                            <span>🕒 On Time</span>
-                            <span>🧼 Sanitized</span>
-                            <span>📺 TV</span>
-                            <span>💺 Pushback</span>
-                        </div>
-                        <button class="select-seats-btn" onclick="showBusSeats('Orange Travels', 'Non-AC Sleeper', '₹599')">Select Seats</button>
-                    </div>
-                </div>
-
-                <!-- Bus 4 -->
-                <div class="bus-card" data-bus="4">
-                    <div class="bus-card-header">
-                        <div class="bus-info">
-                            <h4>Raj Express <span class="bus-type">AC Seater</span></h4>
-                            <p>⭐ 4.4 (956 ratings) | 7:00 AM - 3:00 PM</p>
-                        </div>
-                        <div class="bus-price">
-                            <h3>₹749</h3>
-                            <p>per seat</p>
-                        </div>
-                    </div>
-                    <div class="bus-card-footer">
-                        <div class="amenities">
-                            <span>🕒 On Time</span>
-                            <span>🧼 Sanitized</span>
-                            <span>☕ Coffee</span>
-                            <span>📱 App</span>
-                        </div>
-                        <button class="select-seats-btn" onclick="showBusSeats('Raj Express', 'AC Seater', '₹749')">Select Seats</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seat Selection Modal -->
-        <div id="seatModal" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2>Select Your Seats</h2>
-                    <span class="close-btn" onclick="closeModal()">&times;</span>
-                </div>
-                <div class="modal-body">
-                    <div class="bus-info-bar">
-                        <div class="bus-details">
-                            <h3 id="selectedBusName">VRL Travels</h3>
-                            <p id="selectedBusType">AC Sleeper</p>
-                        </div>
-                        <div class="bus-price-info">
-                            <span id="selectedBusPrice">₹899</span> per seat
-                        </div>
-                    </div>
-
-                    <!-- Seat Legend -->
-                    <div class="seat-legend">
-                        <div class="legend-item">
-                            <div class="seat-sample available"></div>
-                            <span>Available</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="seat-sample selected"></div>
-                            <span>Selected</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="seat-sample booked"></div>
-                            <span>Booked</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="seat-sample ladies"></div>
-                            <span>Ladies</span>
-                        </div>
-                    </div>
-
-                    <!-- Bus Layout -->
-                    <div class="bus-layout">
-                        <div class="deck-info">
-                            <button class="deck-btn active">Lower Deck</button>
-                            <button class="deck-btn">Upper Deck</button>
-                        </div>
-
-                        <!-- Lower Deck Seats -->
-                        <div class="deck-seats active" id="lowerDeck">
-                            <div class="driver-cabin">
-                                <div class="driver-seat">🚌 DRIVER</div>
-                            </div>
-                            
-                            <div class="seats-grid" id="lowerDeckSeats">
-                                <!-- Seats will be generated by JavaScript -->
-                            </div>
-                            
-                            <div class="door-section">
-                                <div class="door">DOOR 🚪</div>
-                            </div>
-                        </div>
-
-                        <!-- Upper Deck Seats -->
-                        <div class="deck-seats" id="upperDeck">
-                            <div class="seats-grid" id="upperDeckSeats">
-                                <!-- Seats will be generated by JavaScript -->
-                            </div>
-                        </div>
-
-                        <!-- Selected Seats Summary -->
-                        <div class="selected-seats-summary" id="selectedSeatsSummary">
-                            <p>No seats selected</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="total-price">
-                        Total: <span id="totalPrice">₹0</span>
-                    </div>
-                    <button class="continue-btn" onclick="showPassengerForm()">Continue</button>
-                </div>
-            </div>
+    <!-- SLOT SELECTION -->
+    <section id="slots">
+        <h2>Select Your Seat</h2>
+        <div class="seat-container">
+            <div class="seat" onclick="selectSeat(this)">1</div>
+            <div class="seat" onclick="selectSeat(this)">2</div>
+            <div class="seat" onclick="selectSeat(this)">3</div>
+            <div class="seat" onclick="selectSeat(this)">4</div>
         </div>
+    </section>
 
-        <!-- Passenger Details Modal -->
-        <div id="passengerModal" class="modal">
-            <div class="modal-content passenger-modal">
-                <div class="modal-header">
-                    <h2>Passenger Details</h2>
-                    <span class="close-btn" onclick="closePassengerModal()">&times;</span>
-                </div>
-                <div class="modal-body">
-                    <form id="passengerForm">
-                        <div class="form-section">
-                            <h3>Contact Details</h3>
-                            <div class="form-group">
-                                <label>Full Name *</label>
-                                <input type="text" id="fullName" placeholder="Enter your full name" required>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label>Email *</label>
-                                    <input type="email" id="email" placeholder="Enter your email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Phone *</label>
-                                    <input type="tel" id="phone" placeholder="10 digit mobile number" pattern="[0-9]{10}" required>
-                                </div>
-                            </div>
-                        </div>
+    <!-- BOOKING FORM -->
+    <section id="form-section" style="display:none;">
+        <h2>Enter Details</h2>
+        <form id="bookingForm">
+            <input type="text" placeholder="Name" required><br>
+            <input type="number" placeholder="Age" required><br>
+            <input type="text" placeholder="Gender" required><br>
+            <input type="email" placeholder="Email" required><br>
+            <input type="text" placeholder="Phone Number" required><br>
+            <button type="submit">Book Ticket</button>
+        </form>
+    </section>
 
-                        <div class="form-section">
-                            <h3>Passenger Information</h3>
-                            <div id="passengerForms">
-                                <!-- Passenger forms will be added here dynamically -->
-                            </div>
-                        </div>
-
-                        <div class="form-section">
-                            <h3>Boarding Point</h3>
-                            <div class="form-group">
-                                <select id="boardingPoint" required>
-                                    <option value="">Select Boarding Point</option>
-                                    <option value="mumbai-central">Mumbai Central - 9:30 PM</option>
-                                    <option value="dadar">Dadar - 9:45 PM</option>
-                                    <option value="thane">Thane - 10:15 PM</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-section">
-                            <h3>Payment Method</h3>
-                            <div class="payment-options">
-                                <label class="payment-option">
-                                    <input type="radio" name="payment" value="credit" checked>
-                                    <span>💳 Credit Card</span>
-                                </label>
-                                <label class="payment-option">
-                                    <input type="radio" name="payment" value="debit">
-                                    <span>💳 Debit Card</span>
-                                </label>
-                                <label class="payment-option">
-                                    <input type="radio" name="payment" value="upi">
-                                    <span>📱 UPI</span>
-                                </label>
-                                <label class="payment-option">
-                                    <input type="radio" name="payment" value="netbanking">
-                                    <span>🏦 Net Banking</span>
-                                </label>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <div class="price-breakup">
-                        <p>Ticket Price: <span id="ticketPrice">₹0</span></p>
-                        <p>GST: <span id="gst">₹0</span></p>
-                        <p class="total">Total: <span id="finalTotal">₹0</span></p>
-                    </div>
-                    <button class="continue-btn" onclick="confirmBooking()">Confirm Booking</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Booking Confirmation Modal -->
-        <div id="confirmationModal" class="modal">
-            <div class="modal-content confirmation-modal">
-                <div class="modal-body confirmation-body">
-                    <div class="success-animation">
-                        ✓
-                    </div>
-                    <h2>Booking Confirmed!</h2>
-                    <p>Your ticket has been booked successfully</p>
-                    
-                    <div class="ticket-details" id="ticketDetails">
-                        <!-- Ticket details will be filled dynamically -->
-                    </div>
-                    
-                    <div class="confirmation-actions">
-                        <button class="download-btn">⬇ Download Ticket</button>
-                        <button class="home-btn" onclick="closeAllModals()">Back to Home</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer Section -->
+    <!-- FOOTER -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>BookMyBus</h4>
-                <p>India's leading bus ticket booking platform</p>
-                <div class="app-links">
-                    <span>📱 Get App</span>
-                    <span>📱 Google Play</span>
-                    <span>📱 App Store</span>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Press</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a href="#">📘</a>
-                    <a href="#">🐦</a>
-                    <a href="#">📷</a>
-                    <a href="#">💼</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 BookMyBus. All rights reserved.</p>
-        </div>
+        <p>© 2026 Ticket Booking App</p>
     </footer>
 
     <script src="book.js"></script>
