@@ -7,7 +7,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check for any previously booked seats from localStorage
     loadBookedSeats();
 });
+let selectedSeat = null;
 
+function selectSeat(seat) {
+    if (seat.classList.contains("booked")) {
+        alert("Seat already booked!");
+        return;
+    }
+
+    selectedSeat = seat;
+    document.getElementById("form-section").style.display = "block";
+}
+
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Show confirmation popup
+    alert("✅ Booking Confirmed!");
+
+    // Change seat color to booked
+    selectedSeat.classList.add("booked");
+
+    // Hide form
+    document.getElementById("form-section").style.display = "none";
+
+    // Reset form
+    this.reset();
+});
 function generateSeats() {
     const seatsContainer = document.getElementById('seatsContainer');
     const totalSeats = 20; // 5 rows x 4 columns
